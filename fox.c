@@ -16,34 +16,27 @@ Move _mv_shNeutralA = {.inputs = _raw_shNeutralA, .size = 4};
 
 WaveshineInfo info = {0};
 
+void addCleanUpLogic(AI* ai) {
+  addLogic(ai, &resetOnWaitLogic);
+}
+
 void nair(AI* ai) {
   addMove(ai, &_mv_shNeutralA);
   info.state = 0;
 }
 
 void shine(AI* ai) {
-  addMove(ai, &_mv_downB);
-  info.state = 1;
-
-  //resetAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 30;
-  // addLogic(ai, &resetAfterFrameLogic);
-  addLogic(ai, &nairLogic);
-}
-
-/*
-void setGlobalVariables(AI* ai) {
-  info.state = 0;
-}
-
-void waveshine(AI* ai) {
-  setGlobalVariables(ai);
-
   if (info.state == 0) {
     addMove(ai, &_mv_downB);
     info.state = 1;
+
+    // TODO necessary?
+    resetAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 30;
+    addLogic(ai, &resetAfterFrameLogic);
   } else if (info.state == 1) {
-    addMove(ai, &_mv_shNeutralA);
-    info.state = 0;
+    addLogic(ai, &nairLogic);
   }
+
+  // TODO necessary?
+  addCleanUpLogic(ai);
 }
-*/
