@@ -20,7 +20,8 @@ extern Logic getOffGroundLogic;
 extern Logic actAfterTechLogic;
 
 /* FOX STUFF */
-extern Logic waveshineLogic;
+extern Logic nairLogic;
+extern Logic shineLogic;
 
 extern AI cpuPlayer;
 

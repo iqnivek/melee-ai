@@ -73,7 +73,12 @@ Logic actAfterTechLogic =
 
 /* FOX STUFF */
 
-Logic waveshineLogic = {
+Logic shineLogic = {
     {&actionStateEq, .arg1.u = 2, .arg2.u = _AS_Wait},
-    {&waveshine, .arg1.p = &cpuPlayer}
+    {&shine, .arg1.p = &cpuPlayer}
+};
+
+Logic nairLogic = {
+    {&pastFrame},
+    {&nair, .arg1.p = &cpuPlayer}
 };
