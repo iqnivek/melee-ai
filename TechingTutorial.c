@@ -18,7 +18,7 @@ static void loadDefaultLogic()
     addLogic(&cpuPlayer, &respawnLogic);
     addLogic(&cpuPlayer, &hitTechLogic);
     addLogic(&cpuPlayer, &getOffGroundLogic);
-    addLogic(&cpuPlayer, &waveshineLogic);
+    addLogic(&cpuPlayer, &shineLogic);
 }
 
 void _main()
