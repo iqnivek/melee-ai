@@ -30,13 +30,13 @@ void shine(AI* ai) {
     addMove(ai, &_mv_downB);
     info.state = 1;
 
-    // seems unnecessary
+    // unnecessary
     // resetAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 30;
     // addLogic(ai, &resetAfterFrameLogic);
   } else if (info.state == 1) {
     addLogic(ai, &nairLogic);
   }
 
-  // TODO necessary?
-  addCleanUpLogic(ai);
+  // unnecessary
+  // addCleanUpLogic(ai);
 }
